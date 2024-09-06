@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-Admissão</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="./images/image.png" alt="">
+        </div>
+    </header>
+    <main class="admissao">
+        <div class="container">
+
+            <div class="box">
+
+                <form action="form-action.php" method="post">
+
+                        <h1>Pré-Admissão</h1>
+                        <h6>Professor Seletista - Desenvolvimento de Sistemas</h6>
+
+                        <label for="nome">
+                            <Input type="text" placeholder="Nome Completo" id="nome" name="nome" required></Input>
+                        </label>
+
+
+                        <div class="sexo">
+                            <p>Sexo:</p>
+                            <label>
+                                <label for="homem">
+                                    <input type="radio" name="sexo" value="Homem" id="homem" required>
+                                    Homem
+                                </label>
+
+
+                                <label for="mulher">
+                                    <input type="radio" name="sexo" value="mulher" id="mulher" required>
+                                    Mulher
+                                </label>
+                            </label>
+                        </div>
+
+                        <label for="email">
+                            <Input type="email" placeholder="Email" id="email" name="email" required></Input>
+                        </label>
+
+
+                        <div class="formacao">
+                            Formação:
+                            <select name="formacao" required>
+                                <option name="formacao" value="Analise e Desenvolvimento de Sistemas">Analise e Desenvolvimento de Sistemas</option>
+                                <option name="formacao" value="Ciência de Dados">Ciência de Dados</option>
+                                <option name="formacao" value="Ciênciada Computação">Ciênciada Computação</option>
+                                <option name="formacao" value="Engenharia de Software">Engenharia de Software</option>
+                                <option name="formacao" value="Engenharia da Computação">Engenharia da Computação</option>
+                            </select>
+                        </div>
+
+                        <label for="descricao">
+                            <textarea placeholder="Descrição do ultimo emprego." id="descricao" name="descricao" required></textarea>
+                        </label>
+
+
+
+                        <label class="terms">
+                            <input type="checkbox" required />
+                            Eu Li e concordo com os <a href="" target="_blank">_termos de uso.</a>
+                        </label>
+
+
+                        <button type="submit"> enviar</button>
+
+                </form>
+
+                <div class="image">
+                    <img src="./images/etec.png" alt="">
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Agenda 02: Desenvolvimento de Sistemas
+            <p>
+            <p>Feito por <a href="" target="_blank">Matheus Henrique Mendes</a></p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

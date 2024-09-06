@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pagamento</title>
+        <link rel="stylesheet" href="css/form.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h3>Madeira e Cia Ltda</h3>
+                <menu>
+                    <ul>
+                        <li><a href="">Colaboradores</a></li>
+                        <li><a href="">Fazer um Orçamento</a></li>
+                        
+                    </ul>
+                </menu>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+
+                <div class="box">
+                    <form action="form-action.php" method="post">
+                        <h1>Forma de Pagamento</h1>
+                        
+                        </label><input type="text"placeholder="Nome do Cliente" name="nome" required></label>
+
+                        <label> <input type="number" placeholder="Valor da compra em Reais" name="dinheiro" required></label>
+
+                        <div for="pagamento" class="pagamento" >
+                            <p>Escolha a forma de pagamento:</p>
+                            <select name="pagamento" id="" required>
+                                <option name="pagamento" value="debito">Cartão de Débito</option>
+                                <option name="pagamento" value="credito">Cartão de Crédito</option>
+                                <option name="pagamento" value="deposito">Depósito Bancario</option>
+                                <option name="pagamento" value="pix">Pix</option>
+                            </select>
+                        </div>
+
+                        <div class="termos">
+                            <label><input type="checkbox" class="termo" required>Confirmar valor.</label>
+                            <label><input type="checkbox" class="termo" required>Concordo com os <a href="">termos de uso</a>.</label>
+                        </div>
+                        <button type="submit">Efetuar o Pagamento</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="profile">Desenvolvido por Matheus Henrique Mendes</div>
+                <div class="items">
+                    <item>ETEC - Desenvolvimento de Sistemas</item>
+                    <item>Turma DWK</item>
+                    <item>Agenda 03 - DS II</item>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

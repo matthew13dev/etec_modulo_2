@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'montserrat';
+    font-weight: 300;
+}
+
+
+header{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    background-color: white;
+    z-index: 9999;
+}
+
+header .container{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h3{
+    font-weight: 500;
+}
+
+
+header menu ul{
+ display: flex;
+ gap: 10px;
+}
+
+header menu ul li{
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    border-bottom: 5px solid transparent;
+    transition: all 0.05s linear;
+    padding: 10px;
+    color: #222;
+}
+
+header a:hover{
+    border-bottom: 5px solid rgb(177, 115, 1);
+    
+}
+
+
+
+main {
+    background-image: url("../images/back2.png");
+    background-position: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 80px;
+}
+
+.container {
+    width: 920px;
+    height: inherit;
+}
+
+main .container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.box {
+    width: 400px;
+    background-color: white;
+    
+    border-radius: 15px;
+    box-shadow: 15px 15px 60px #999;
+    color: rgb(177, 115, 9);
+}
+
+h1{
+    margin: 30px;
+}
+.box p{
+    margin: 5px 0px;
+    padding: 10px 30px;
+    line-height: 30px;
+    font-size: 17px;
+    font-weight: 400;
+    transition: all 0.05s linear;
+}
+
+.box p:hover{
+    background-color: rgb(177, 115, 1);
+    color: white;
+}
+
+.box span{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+.voltar a{
+    position: fixed;
+    top: 80px;
+    right: 0;
+    margin: 40px;
+    width: 120px;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.05s linear;
+    cursor: pointer;
+
+    color: black;
+    text-decoration: none;
+}
+
+.voltar a:hover{
+    background-color: rgb(177, 115, 1);
+    color: white;
+}
+
+
+
+
+
+
+footer{
+    height: 200px;
+    background-color: #222;
+    color: #888;
+    
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

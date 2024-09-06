@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&family=Indie+Flower&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    border-radius: 0%;
+    border: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+}
+
+header {
+    background-color: #fdfb55;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+
+}
+
+header img {
+    height: 80px;
+    padding: 15px;
+}
+
+header a {
+    text-decoration: none;
+    color: #999;
+}
+
+main {
+    background-color: #eee;
+    min-height: 100vh;
+    padding: 30px;
+    padding-top: 100px;
+}
+
+main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 600px;
+}
+
+form img{
+    width: 100px;
+}
+
+form h1 {
+    margin: 10px;
+    color: #999;
+    font-size: 24px;
+}
+form h6{
+    color: #999;
+}
+
+form .sexo{
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    gap: 10px;
+    color: #4c4646;
+}
+
+form .sexo label{
+    margin: 0;
+    padding: 0;
+}
+
+form .sexo label input{
+    width: 30px;
+}
+
+form input,
+form textarea,
+form .formacao{
+    padding: 10px;
+}
+form label,
+form .formacao{
+    margin-top: 10px;
+}
+
+form label,
+form input,
+form textarea,
+form .formacao,
+form .sexo{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 11px;
+}
+
+form .terms input{
+    width: auto;
+    margin-right: 10px;
+}
+
+form input,
+form textarea,
+form .formacao,
+form .sexo {
+    border: 2px solid #ccc;
+    outline: none;
+    color: #777;
+}
+
+form input:hover,
+form textarea:hover,
+form .sexo:hover,
+form .formacao:hover {
+    border: 2px solid #777;
+}
+
+
+form .sexo input{
+    margin-right: 10px;
+}
+
+form textarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+}
+
+
+
+form button {
+    margin: 20px 0px;
+    width: 120px;
+    padding: 10px;
+    border: none;
+    background-color: #999;
+    cursor: pointer;
+    transition: all 0.01s linear;
+}
+
+form button:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+footer {
+    background-color: #4c4646;
+    width: 100%;
+    height: 200px;
+    color: #999;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+footer p{
+    padding: 3px;
+}
+
+footer a {
+    color: #999;
+    text-decoration: underline;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 30px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 3px 3px 15px #a5a1a1;
+
+    
+}
+
+.box form,
+.box .image {
+    width: 50%;
+    padding: 10px;
+}
+
+.image img{
+    margin: auto;
+    width: 100%;
+}
+
+
+form select{
+    color: #777;
+    display: flex;
+    margin-left: 30px;
+}

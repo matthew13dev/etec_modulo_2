@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    
+}
+
+
+.professor ul li,
+.professor li{
+    list-style: none;
+}
+aside{
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #444;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    transition: all 0.1s linear;
+    overflow: hidden;
+
+}
+
+#menu--button,
+#close--button{
+    cursor: pointer;
+    width: 100%;
+}
+
+#menu--button:hover,
+#close--button:hover{
+    background-color: #999;
+    color: white;
+}
+
+#close--button{
+    display: none;
+}
+
+
+aside ul,
+aside li{
+    list-style: none;
+}
+aside ul {
+    display: none;
+    width: 200px;
+}
+
+aside li{
+    padding: 10px;
+    cursor: pointer;
+}
+
+aside li:hover{
+    background-color: #999;
+    color: white;
+
+    box-shadow: 2px 2px 15px #f1fff1;
+}
+
+
+main {
+    margin-left: 50px;
+    min-height: 100vh;
+    transition: all 0.1s linear;
+}
+
+
+main #home{
+    display: block;
+}
+
+
+#home .banner,
+#home .professor,
+#home .turmas{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home  h1{
+    margin-top: -100px;
+    font-size: 50px;
+}
+
+
+#home .professor p{
+    padding: 10px;
+    text-align: start;
+}
+main section{
+    display: none;
+}
+h1{
+    text-align: center;
+}
+.container {
+    width: 1024px;
+    margin: auto;
+}
+
+
+.responsive--table{
+    width: 100%;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+table{
+    width: 600px;
+    border-collapse: collapse;
+}
+table caption{
+    caption-side: top;
+    margin: 15px 0px;
+    font-size: 30px;
+    background-color: #2294f2;
+    color: white;
+    padding: 10px;
+}
+
+table thead tr{
+    background-color: #2294f2;
+    color: white;
+}
+table tr td, table tr th{
+   border: 1px solid #444;
+   padding: 10px;
+   text-align: center;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: yellow;
+}
+
+
+
+
+

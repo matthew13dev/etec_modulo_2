@@ -1,0 +1,35 @@
+volumes:
+ mysql_volume_etec:
+
+networks:
+ application_network_etec:
+
+services:
+
+  mysql:
+      image: mysql
+      container_name: mysql_etec
+      restart: always
+      ports:
+        - 3306:3306
+
+      environment:
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      volumes:
+        - mysql_volume_etec:/var/lib/mysql
+      networks:
+        - application_network_etec
+
+  php-apache:
+    image: php:8.2-apache
+    container_name: php_apache_etec
+    restart: always
+    ports:
+      - 80:80
+    
+    volumes:
+    - ./src:/var/www/html
+    networks:
+      - application_network_etec
+
+    
