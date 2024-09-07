@@ -135,87 +135,95 @@ function imprimir_Turma_DSII_XPJ()
         </ul>
     </aside>
     <main onclick="menu_Close()">
-        <div class="container">
 
-            <section id="home">
-                <div class="banner">
-                    <h1>Sistema de Gestão do Professor</h1>
-                </div>
+        <section id="home">
+            <div class="banner light">
+                <h1>Sistema de Gestão do Professor</h1>
+            </div>
 
-                <div class="professor">
-                    <h1>Meus Dados</h1>
-                    <p>Nome: <?php echo $professor[0] ?> </p>
-                    <p>ID:<?php echo $professor[1] ?> </p>
-                    <p>Formação: <?php echo $professor[2] ?> </p>
-                    <p>Disciplina: <?php echo $professor[3] ?> </p>
-                    <p>Qt. Turmas: <?php echo $professor[4] ?> </p>
-                </div>
-                <div class="turmas">
-                    <ul>
-                        <h1>Turmas</h1>
-                        <li>DSII - VBN</li>
-                        <li>DSII - QWE</li>
-                        <li>DSII - XPJ</li>
+            <div class="professor dark">
+                <h1>Meus Dados</h1>
+                <img src="image.png" alt="professor">
+                <ul>
+                    <li>Nome: <?php echo $professor[0] ?> </li>
+                    <li>ID:<?php echo $professor[1] ?> </li>
+                    <li>Formação: <?php echo $professor[2] ?> </li>
+                    <li>Disciplina: <?php echo $professor[3] ?> </li>
+                    <li>Qt. Turmas: <?php echo $professor[4] ?> </li>
+                </ul>
 
-                    </ul>
-                </div>
-            </section>
-            <section id="OITAVOA">
-                <div class="responsive--table">
+            </div>
+            <div class="turmas light">
+                <h1>Turmas</h1>
+                <ul>
+                    <li>DSII - VBN</li>
+                    <li>DSII - QWE</li>
+                    <li>DSII - XPJ</li>
 
-                    <table>
-                        <caption>Turma - VBN</caption>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>1º Semestre</th>
-                                <th>2º Semestre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php imprimir_Turma_DSII_VBN(); ?>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section id="OITAVOB">
-                <div class="responsive--table">
+                </ul>
+            </div>
+        </section>
+        <section id="OITAVOA">
+            <div class="responsive--table">
 
-                    <table>
-                        <caption>Turma - QWE</caption>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>1º Semestre</th>
-                                <th>2º Semestre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php imprimir_Turma_DSII_QWE(); ?>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section id="OITAVOC">
-                <div class="responsive--table">
+                <table>
+                    <caption>Turma - VBN</caption>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>1º Semestre</th>
+                            <th>2º Semestre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php imprimir_Turma_DSII_VBN(); ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="OITAVOB">
+            <div class="responsive--table">
 
-                    <table>
-                        <caption>Turma - XPJ</caption>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>1º Semestre</th>
-                                <th>2º Semestre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php imprimir_Turma_DSII_XPJ(); ?>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
+                <table>
+                    <caption>Turma - QWE</caption>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>1º Semestre</th>
+                            <th>2º Semestre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php imprimir_Turma_DSII_QWE(); ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="OITAVOC">
+            <div class="responsive--table">
+
+                <table>
+                    <caption>Turma - XPJ</caption>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>1º Semestre</th>
+                            <th>2º Semestre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php imprimir_Turma_DSII_XPJ(); ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
 </body>
+<footer>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae minima rerum laboriosam ipsum, corporis natus earum sed quas tenetur reprehenderit blanditiis accusantium possimus molestias commodi expedita in iste? Maiores, itaque!
+    </p>
+</footer>
 
 </html>
