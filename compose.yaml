@@ -1,5 +1,6 @@
 volumes:
  mysql_volume_etec:
+ php_volume_etec:
 
 networks:
  application_network_etec:
@@ -21,7 +22,7 @@ services:
         - application_network_etec
 
   php-apache:
-    image: php:8.2-apache
+    build: ./
     container_name: php_apache_etec
     restart: always
     ports:
