@@ -1,0 +1,186 @@
+/* styles.css */
+
+:root {
+    --color-primary: #3498db; /* Azul */
+    --color-primary-dark: #2980b9; /* Azul Escuro */
+    --color-secondary: #e74c3c; /* Vermelho */
+    --color-background: #ecf0f1; /* Cinza Claro */
+    --color-background-dark: #34495e; /* Azul Escuro */
+    --color-text: #2c3e50; /* Texto Escuro */
+    --color-border: #bdc3c7; /* Cinza Médio */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Estilo do Menu Lateral */
+.sidebar {
+    width: 250px;
+    background-color: var(--color-background-dark);
+    color: var(--color-text);
+    padding: 20px;
+    position: fixed; /* Fixa o menu lateral */
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* Estilo do Conteúdo Principal */
+.main-content {
+    flex: 1;
+    margin-left: 250px; /* Espaço para o menu lateral */
+    padding: 20px;
+    background-color: var(--color-background);
+    height: 100vh; /* Para ocupar toda a altura da tela */
+    overflow-y: auto; /* Permite rolagem se o conteúdo exceder a altura */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-background-dark);
+    color: var(--color-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.logout-btn {
+    background-color: var(--color-secondary);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Estilo das Seções */
+.content-wrapper {
+    margin-top: 20px;
+}
+
+.section {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Formulário de Cadastro */
+.form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Tabela de Listagem */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+table th {
+    background-color: var(--color-background-dark);
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    margin: 0 2px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--color-primary-dark);
+}

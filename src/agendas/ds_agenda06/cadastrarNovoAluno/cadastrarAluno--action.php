@@ -53,6 +53,7 @@ $response->bindValue(":nota2", $nota2);
 $response->bindValue(":nota3", $nota3);
 $response->bindValue(":nota4", $nota4);
 
+$response->execute();
 
 ?>
 
@@ -63,101 +64,28 @@ $response->bindValue(":nota4", $nota4);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FormAction</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            border: 0;
-            color: black;
-            text-decoration: none;
-            list-style: none;
-        }
-
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50px;
-            width: 100%;
-
-            top: 0;
-            position: fixed;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            height: 100%;
-        }
-
-        header a {
-            display: inline-block;
-            height: 100%;
-            padding: 10px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.05s linear;
-        }
-
-        header a:hover {
-            border-bottom: 3px solid orange;
-        }
-
-        main {
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 1024px;
-            margin: auto;
-        }
-
-        h1 {
-            margin-top: 50px;
-        }
-
-        ul li {
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        footer {
-            background-color: #444;
-            height: 200px;
-        }
-
-        footer .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        footer p {
-            color: #999;
-        }
-    </style>
+    <link rel="stylesheet" href="action.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="../index.html">Tela Inicial</a>
-            <a href="../cadastrarNovoAluno/cadastrarAluno--form.html">Nova Adição</a>
+            <h1>Aluno adicionado com Sucesso!</h1>
+            <menu>
+                <a href="./cadastrarNovoAluno/cadastrarAluno--form.html">Novo Aluno</a>
+                <a href="../listarAluno.php">Listar Alunos</a>
+            </menu>
         </div>
     </header>
     <main>
+
         <div class="container">
-            <h1>Cadastro feito com sucesso!</h1>
             <ul>
-                <li>Aluno: <?php echo $nome ?></li>
-                <li>1º Bimestre: <?php echo $nota1 ?>/10</li>
-                <li>2º Bimestre: <?php echo $nota2 ?>/10</li>
-                <li>3º Bimestre: <?php echo $nota3 ?>/10</li>
-                <li>4º Bimestre: <?php echo $nota4 ?>/10</li>
+                <li>Nome: <?php echo $nome ?></li>
+                <li>Nota 1º Bimestre: <?php echo $nota1 ?>/10</li>
+                <li>Nota 2º Bimestre: <?php echo $nota2 ?>/10</li>
+                <li>Nota 3º Bimestre: <?php echo $nota3 ?>/10</li>
+                <li>Nota 4º Bimestre: <?php echo $nota4 ?>/10</li>
             </ul>
         </div>
     </main>

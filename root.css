@@ -1,0 +1,12 @@
+:root {
+    --color-primary: #3498db; /* Azul - Aplicado em botões e links */
+    --color-primary-dark: #2980b9; /* Azul Escuro - Aplicado em botões ao passar o mouse */
+    --color-secondary: #e74c3c; /* Vermelho - Aplicado no botão de logout */
+    --color-secondary-dark: #c0392b; /* Vermelho Escuro - Aplicado no botão de logout ao passar o mouse */
+    --color-background: #ecf0f1; /* Cinza Claro - Aplicado ao conteúdo principal */
+    --color-background-dark: #34495e; /* Azul Escuro - Aplicado ao cabeçalho e cabeçalho da tabela */
+    --color-text: #ecf0f1; /* Branco - Aplicado no texto */
+    --color-sidebar: #2c3e50; /* Azul Escuro - Aplicado ao menu lateral */
+    --color-section-bg: #ffffff; /* Branco - Aplicado nas seções de cadastro e listagem */
+    --color-border: #bdc3c7; /* Cinza Médio - Aplicado em bordas de inputs e tabelas */
+}
