@@ -9,3 +9,11 @@ create table user(
 
     constraint pk_user primary key(id);
 );
+
+INSERT INTO user (nome, telefone, email) VALUES
+    ('Ana Silva', '(11) 98765-4321', 'ana.silva@gmail.com'),
+    ('Carlos Santos', '(21) 99876-5432', 'carlos.santos@yahoo.com'),
+    ('Beatriz Oliveira', '(31) 91234-5678', 'beatriz.oliveira@hotmail.com'),
+    ('Daniel Costa', '(41) 97654-3210', 'daniel.costa@outlook.com'),
+    ('Eduardo Pereira', '(51) 92345-6789', 'eduardo.pereira@gmail.com')
+;
