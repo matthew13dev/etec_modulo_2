@@ -8,12 +8,18 @@ $password = "admin123";
 
 $user = new User($host, $dbname, $user, $password);
 
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
-    $user->deleteUser($id);
+$idDelete = isset($_POST['idDelete']);
+if ($idDelete) {
+    $idDelete = addslashes($_POST['idDelete']);
+    $user->deleteUser($idDelete);
 }
 
 
+
+if (isset($_POST['idUpdate'])) {
+    $idUpdate = addslashes($_POST['idUpdate']);
+    $res = $user->selectUser($idUpdate);
+}
 ?>
 
 
@@ -25,6 +31,7 @@ if (isset($_POST['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Pessoa</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -33,37 +40,74 @@ if (isset($_POST['id'])) {
 
         <aside>
             <?php
-            if (isset($_POST['save'])) {
-                $nome = addslashes($_POST['name']);
-                $phone = addslashes($_POST['phone']);
-                $email = addslashes($_POST['email']);
+            if (isset($_POST['btn-insert']) || isset($_POST['btn-update'])) {
 
-                if ($nome != null && $phone != null && $email != null) {
-                    $isUser = $user->insertUser($nome, $phone, $email);
-                    if (!$isUser) {
-                        echo "<div class='error'>ERRO: Usuario já Cadastrado!</div>";
+                if (isset($_POST['btn-update'])) {
+
+                    $idUpdate = addslashes($_POST['btn-update']);
+                    $nome = addslashes($_POST['name']);
+                    $phone = addslashes($_POST['phone']);
+                    $email = addslashes($_POST['email']);
+
+                    if ($nome != null && $phone != null && $email != null) {
+                        $user->updateUser($idUpdate, $nome, $phone, $email);
                     }
+
+                    
                 } else {
-                    echo "<h1>preencha todos os campos!</h1>";
+                    $nome = addslashes($_POST['name']);
+                    $phone = addslashes($_POST['phone']);
+                    $email = addslashes($_POST['email']);
+
+                    if ($nome != null && $phone != null && $email != null) {
+                        $isUser = $user->insertUser($nome, $phone, $email);
+                        if (!$isUser) {
+                            echo "<div class='error'>ERRO: Usuario já Cadastrado!</div>";
+                        }
+                    } else {
+                        echo "<h1>preencha todos os campos!</h1>";
+                    }
                 }
             }
 
             ?>
             <form action="./index.php" method="post">
-                <h2>Register a new User:</h2>
-                <label><input type="text" name="name" placeholder="Username" required></label>
-                <label><input type="text" name="phone" placeholder="Phone" required></label>
-                <label><input type="email" name="email" placeholder="Email" required></label>
-                <button type="submit" value="save" name="save">Save</button>
+                <?php if (isset($res)) {
+                    echo "<h2>UPDATE your User: $idUpdate</h2>";
+                } else {
+                    echo "<h2>INSERT a new User:</h2>";
+                } ?>
+                <label><input type="text" name="name" placeholder="Username" required
+                        value="<?php if (isset($res)) {
+                                    echo $res['nome'];
+                                } ?>"></label>
+
+                <label><input type="text" name="phone" placeholder="Phone" required
+                        value="<?php if (isset($res)) {
+                                    echo $res['telefone'];
+                                } ?>"></label>
+
+                <label><input type="email" name="email" placeholder="Email" required
+                        value="<?php if (isset($res)) {
+                                    echo $res['email'];
+                                } ?>"></label>
+
+                <?php
+                if (isset($res)) {
+                    echo "<button class='btn-form' type='submit' value='$res[ID]' name='btn-update'>Update</button>";
+                } else {
+                    echo "<button class='btn-form' type='submit' value='Insert' name='btn-insert'>Insert</button>";
+                }
+                ?>
             </form>
 
 
             <form action="">
-                <h2>Seach a user:</h2>
+                <h2>SELECT a user:</h2>
                 <label for="">
-                    <input type="text" name="seach" placeholder="Fisrt Name">
+                    <input type="text" name="nome" placeholder="User's name">
                 </label>
-                <button type="submit">GO!</button>
+                <button class="btn-form" type="submit" value="seach">Select</button>
             </form>
         </aside>
         <main class="principal">
@@ -91,42 +135,41 @@ if (isset($_POST['id'])) {
 
                                 $item = $list[$i];
 
-                                echo "<tr>";
-                                echo "<td> $item[ID]</td>";
-                                echo "<td> $item[nome]</td>";
-                                echo "<td> $item[telefone]</td>";
-                                echo "<td> $item[email]</td>";
-                                echo "<td class='option'>";
-                                echo "<form action='index.php' method='POST' onsubmit='return confirm('Tem certeza em exluir esse usuario?')';>
-                                            <input type='hidden' name='idExcluir' value='$item[ID]'>
-                                            <button type='submit'>Excluir</button>
-                                        </form>";
+                                $register =
+                                    "<tr>
+                                <td> $item[ID]</td>
+                                <td> $item[nome]</td>
+                                <td> $item[telefone]</td>
+                                <td> $item[email]</td>
+                                <td class='option'>
+                                <form action='index.php' method='POST'>
+                                    <input type='hidden' name='idDelete' value='$item[ID]'>
+                                    <button class='btn-option-delete' type='submit'>Delete</button>
+                                </form>
+                                
 
-                                echo "<form action='index.php' method='POST' onsubmit='return confirm('Tem certeza em exluir esse usuario?')';>
-                                            <input type='hidden' name='idAtualizar' value='$item[ID]'>
-                                            <button type='submit'>Atualizar</button>
-                                        </form>";
+                                <form action='index.php' method='POST';>
+                                    <input type='hidden' name='idUpdate' value='$item[ID]'>
+                                    <button class='btn-option-update' type='submit'>Edit</button>
+                                </form>
 
-                                echo "</td>";
-                                echo "</tr>";
+                                </td>
+                                </tr>";
+                                echo $register;
                             }
                         } else {
                             echo "<tr>
-                                        <td colspan='4' style='text-align:center';>
-                                            Sem registros no banco
-                                        </td>
-                                    </tr>";
+                                    <td colspan='4' style='text-align:center';>
+                                        Sem registros no banco
+                                    </td>
+                                </tr>";
                         }
 
-                        if (isset($_POST['idExcluir'])) {
-                            $idUser = addslashes($_POST['idExcluir']);
-                            $user->deleteUser($idUser);
-                        }
+
                         ?>
                     </tbody>
                 </table>
             </section>
-            </m>
         </main>
 </body>
 

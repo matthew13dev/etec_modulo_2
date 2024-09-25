@@ -11,7 +11,6 @@ class User
             // Conexão correta com PDO
             $this->pdo = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $user, $pass);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         } catch (PDOException $err) {
             echo "Erro de Conexão: " . $err->getMessage();
         } catch (Exception $generico) {
@@ -62,17 +61,60 @@ class User
                 return true;
             }
         } else {
-            
+
             echo "Erro ao inserir usuário: " . $comand->errorInfo()[2];
             return false;
         }
     }
 
 
-    public function deleteUser($id){
+    public function deleteUser($id)
+    {
         $sql = "DELETE from user where ID = :id";
         $cmd = $this->pdo->prepare($sql);
         $cmd->bindValue(":id", $id);
         $cmd->execute();
     }
+
+    public function selectUser($id){
+
+        $list = array();
+        $sql = "SELECT * FROM user where ID = :id";
+        $cmd = $this->pdo->prepare($sql);
+        $cmd->bindValue(":id", $id);
+        $cmd->execute();
+
+        $list = $cmd->fetch(PDO::FETCH_ASSOC);
+
+        return $list;
+
+    }
+
+    public function updateUser($id, $nome,$phone,$email){
+        $sql = "UPDATE user SET nome = :nome, telefone = :phone, email = :email WHERE ID = :id";
+
+        $cmd = $this->pdo->prepare($sql);
+
+        $cmd->bindValue(":nome", $nome);
+        $cmd->bindValue(":phone", $phone);
+        $cmd->bindValue(":email", $email);
+        $cmd->bindValue(":id", $id);
+
+        $cmd->execute();
+    }
+
+    
+    public function seach($nome){
+        $sql = "SELECT * from user where nome = :nome";
+        $cmd = $this->pdo->prepare($sql);
+        $cmd->bindValue("nome", $nome);
+        $cmd->execute();
+
+        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+
+        return $res;
+    }
+
+
+        
 }

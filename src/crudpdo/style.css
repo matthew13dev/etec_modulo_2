@@ -87,12 +87,13 @@ aside form {
     width: 100%;
     border-radius: 15px;
     color: white;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 aside form h2 {
     font-weight: 400;
     padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 aside form label {
@@ -108,7 +109,7 @@ aside form input {
     border-radius: 15px;
 }
 
-aside form button {
+aside form .btn-form {
     padding: 10px;
     width: 120px;
     transition: all 0.05s linear;
@@ -116,9 +117,14 @@ aside form button {
     cursor: pointer;
     color: white;
     border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-aside form button:hover {
+aside form .btn-form:hover {
     background-color: var(--color-primary-dark);
 }
 
@@ -224,4 +230,24 @@ main tbody tr {
     padding: 20px;
     border-radius: 15px;
 
+}
+
+.btn-option-delete,
+.btn-option-update{
+    padding: 10px;
+    width: 60px;
+    background-color: #ccc;
+    transition: all 0.05s linear;
+    cursor: pointer;
+}
+
+.btn-option-delete:hover{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+}
+.btn-option-update:hover{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
 }
