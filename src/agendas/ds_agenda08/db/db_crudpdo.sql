@@ -43,3 +43,14 @@ INSERT INTO user (nome, telefone, email) VALUES
     ('Diana Neves', '(31) 98765-4321', 'diana.neves@yahoo.com');
 
 ;
+
+
+CREATE TABLE login (
+    id int not null auto_increment,
+    email varchar(50) unique not null,
+    pass varchar(50) not null,
+
+    constraint pk_login primary key(id);
+)
+
+insert into login (email, pass) values ("root@email.com", "admin123");
